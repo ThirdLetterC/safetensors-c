@@ -1,0 +1,12 @@
+# Rust build output
+/target/
+
+# Generated C header
+/target/include/safetensors_cbindgen.h
+
+# Compiled distribution artifacts
+/dist/lib/
+/dist/safetensors_example
+
+# Local example model data
+/example_model.safetensors
