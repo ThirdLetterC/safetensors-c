@@ -1,4 +1,4 @@
-# `safetensors-c` — Embeddable C Library Wrapper for Rust `safetensors`
+# safetensors-c
 
 `safetensors-c` wraps the official Hugging Face [`safetensors`](https://github.com/safetensors/safetensors) Rust crate (`v0.8`) into a standalone static library (`libsafetensors_c.a` / `safetensors_c.lib`) paired with a single embeddable C/C++ header file (`include/safetensors.h`).
 
