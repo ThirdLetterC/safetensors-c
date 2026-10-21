@@ -12,25 +12,6 @@
   - Automatically emits `#pragma comment(lib, ...)` in `safetensors.h` under MSVC for the required Windows system libraries (`ws2_32`, `userenv`, `bcrypt`, `ntdll`, `advapi32`).
 - **Panic-Safe FFI Boundary**: Every `extern "C"` entry point catches unwinding panics via `std::panic::catch_unwind` and records detailed diagnostics retrievable via thread-local `safetensors_last_error_message()`.
 
-## Directory Structure
-
-```text
-safetensors-c/
-├── Cargo.toml             # Rust staticlib + cdylib configuration wrapping safetensors 0.8
-├── cbindgen.toml          # cbindgen configuration for automatic C header generation
-├── build.rs               # Emits platform link flags and refreshes cbindgen header
-├── include/
-│   └── safetensors.h      # Embeddable C99 / C11 / C++ header file
-├── src/
-│   └── lib.rs             # Rust FFI implementation wrapping safetensors
-├── examples/
-│   └── example.c          # Complete C usage example (serialize + mmap + zero-copy read)
-├── CMakeLists.txt         # Cross-platform CMake build (Linux, macOS, Windows)
-├── Makefile               # GNU Make build script
-├── build.sh               # Linux / macOS / MSYS2 build script -> ./dist/
-├── build.bat              # Windows Command Prompt build script -> .\dist\
-└── build.ps1              # Windows PowerShell build script -> .\dist\
-```
 
 ## Building the Library (`safetensors.h` + `.a`)
 
